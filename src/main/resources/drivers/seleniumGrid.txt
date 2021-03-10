@@ -1,0 +1,6 @@
+
+// Start Hub
+java -jar "./remote/selenium-server-standalone.jar" -role hub
+
+// Node register to hub
+java -Dwebdriver.chrome.driver="./win/chromedriver.exe" -Dwebdriver.ie.driver="./win/IEDriverServer.exe" -Dwebdriver.gecko.driver="./win/geckodriver.exe" -jar "./remote/selenium-server-standalone.jar" -role node -nodeConfig DefaultNodeWebDriver.json
