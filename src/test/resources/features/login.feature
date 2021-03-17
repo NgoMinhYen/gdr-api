@@ -2,17 +2,17 @@
 Feature: User Profile
 
   Background:
-#    Given On SqlServer, I delete user by username "0303305467" and country "VN"
-#    When I signup new account with below info and verify it
-#      | country     | VN         |
-#      | gdrLogin    | 0303305467 |
-#      | password    | 123456     |
-#      | displayName | Nguyen Teo |
-#      | gender      | 1          |
-#      | language    | 0          |
-#    And The request should be succeed
-#    Given I open chrome
-#    When On Web, I open login page
+    Given On SqlServer, I delete user by username "0303305467" and country "VN"
+    When I signup new account with below info and verify it
+      | country     | VN         |
+      | gdrLogin    | 0303305467 |
+      | password    | 123456     |
+      | displayName | Nguyen Teo |
+      | gender      | 1          |
+      | language    | 0          |
+    And The request should be succeed
+    Given I open chrome
+    When On Web, I open login page
 
   @smoke @login-1
   Scenario: login 2.

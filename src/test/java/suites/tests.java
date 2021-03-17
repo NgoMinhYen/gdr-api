@@ -7,7 +7,6 @@ import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import pages.LoginPage;
 
-@Listeners(listeners.ListenerTest.class)
 public class tests {
     LoginPage loginPage = new LoginPage();
 
@@ -27,7 +26,7 @@ public class tests {
 
 
         DriverUtils.init(DriverType.CHROME);
-        DriverUtils.openUrl("https://web1.globedr.com/signin");
+        DriverUtils.openUrl("https://demo.globedr.com/signin");
         DriverUtils.maximum();
         loginPage.login("0767892632", "123456", "Việt Nam");
         DriverUtils.quit();

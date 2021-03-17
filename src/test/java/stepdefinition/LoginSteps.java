@@ -45,7 +45,7 @@ public class LoginSteps {
 
     @Given("I open chrome")
     public void iOpenChrome() {
-        DriverUtils.init(DriverType.FIREFOX);
+        DriverUtils.init(DriverType.CHROME);
         DriverUtils.maximum();
     }
 
@@ -82,7 +82,7 @@ public class LoginSteps {
 
     @When("On Web, I open login page")
     public void onWebIOpenLoginPage() {
-        DriverUtils.openUrl("https://web1.globedr.com/signin");
+        DriverUtils.openUrl("https://demo.globedr.com/signin");
         ResourceLanguage.getInstance().setCurrentLanguage(loginPage.headerGuest.getLanguage());
 
     }
