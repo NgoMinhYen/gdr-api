@@ -1,13 +1,13 @@
 package config;
 
 import com.apis.globedr.helper.WebserviceBase;
-import com.rest.core.DatabaseEvent;
+import com.rest.core.DatabaseEventHandling;
 import com.rest.core.Logger;
 import com.rest.core.Report;
-import com.rest.core.RestEvent;
 
+import com.rest.core.RestEventHandling;
+import com.rest.core.events.DatabaseEventListener;
 import com.rest.core.events.RestCoreEventListener;
-import com.rest.core.events.StatementEventListener;
 import globedr.selenium.events.EventListener;
 import listeners.ListenerSelenium;
 import net.masterthought.cucumber.Configuration;
@@ -30,13 +30,13 @@ public class BaseCucumber {
         Logger.info("Adding observers for rest core");
 
         // API event
-        RestEvent restEvent = new RestEvent();
+        RestEventHandling restEvent = new RestEventHandling();
         restEvent.attach(new com.rest.core.Logger());
         restEvent.attach(new Report());
         restEvent.attach(new WebserviceBase());
 
         // DB event
-        DatabaseEvent databaseEvent = new DatabaseEvent();
+        DatabaseEventHandling databaseEvent = new DatabaseEventHandling();
         databaseEvent.attach(new com.rest.core.Logger());
         databaseEvent.attach(new Report());
 
@@ -48,7 +48,7 @@ public class BaseCucumber {
         Logger.info("Register all event listeners");
 
         RestCoreEventListener.register(restEvent);
-        StatementEventListener.register(databaseEvent);
+        DatabaseEventListener.register(databaseEvent);
         EventListener.register(listenerSelenium);
 
     }
