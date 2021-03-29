@@ -121,6 +121,8 @@ public class DriverUtils {
                     ops.addArguments("--disable-browser-side-navigation"); //https://stackoverflow.com/a/49123152/1689770
                     ops.addArguments("--disable-gpu"); //https://stackoverflow.com/questions/51959986/how-to-solve-selenium-chromedriver-timed-out-receiving-message-from-renderer-exc
                     ops.addArguments("ignore-certificate-errors");
+                    ops.addArguments("--window-size=1920,1080");
+                    ops.setHeadless(true);
                     ops.setPageLoadStrategy(PageLoadStrategy.NORMAL);
 
                     driver = new ChromeDriver((ChromeDriverService) service, ops);
