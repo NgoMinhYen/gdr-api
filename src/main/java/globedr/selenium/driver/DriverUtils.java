@@ -40,7 +40,7 @@ public class DriverUtils {
                 case REMOTE:
                     DesiredCapabilities capability = new DesiredCapabilities();
 
-                    capability.setBrowserName(BrowserType.FIREFOX);
+                    capability.setBrowserName(BrowserType.CHROME);
                     capability.setPlatform(Platform.ANY);
                     driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), capability);
                     System.out.println("!!!driver "+ driver);
