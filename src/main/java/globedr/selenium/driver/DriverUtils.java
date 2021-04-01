@@ -42,7 +42,7 @@ public class DriverUtils {
 
                     capability.setBrowserName(BrowserType.CHROME);
                     capability.setPlatform(Platform.ANY);
-                    driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), capability);
+                    driver = new RemoteWebDriver(new URL("http://172.177.0.5:4444/wd/hub"), capability);
                     System.out.println("!!!driver "+ driver);
 
                     break;
