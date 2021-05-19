@@ -45,7 +45,7 @@ public class LoginSteps {
 
     @Given("I open chrome")
     public void iOpenChrome() {
-        DriverUtils.init(DriverType.REMOTE);
+        DriverUtils.init(DriverType.CHROME);
         DriverUtils.maximum();
     }
 
