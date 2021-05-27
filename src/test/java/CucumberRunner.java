@@ -13,7 +13,7 @@ import org.junit.runner.RunWith;
         // com.apis.globedr.stepdefinition : store all steps of api into file "gdr-automation-ws-artifactid.jar"
         // config : define config to convert default data of gherkins to Data Object
         glue = {"stepdefinition", "com.apis.globedr.stepdefinition", "config"},
-        tags  = "@login-1",
+        tags  = "@consultant_01",
         plugin = {
                 // ListenerWebPlugin : is customize listener of gherkins
                 "listeners.ListenerWebPlugin",

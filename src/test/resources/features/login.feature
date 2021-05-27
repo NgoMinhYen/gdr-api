@@ -1,18 +1,29 @@
 @regression @login
 Feature: User Profile
 
-  Background:
-    Given On SqlServer, I delete user by username "0303305467" and country "VN"
-    When I signup new account with below info and verify it
-      | country     | VN         |
-      | gdrLogin    | 0303305467 |
-      | password    | 123456     |
-      | displayName | Nguyen Teo |
-      | gender      | 1          |
-      | language    | 0          |
-    And The request should be succeed
+#  Background:
+#    Given On SqlServer, I delete user by username "0303305467" and country "VN"
+#    When I signup new account with below info and verify it
+#      | country     | VN         |
+#      | gdrLogin    | 0303305467 |
+#      | password    | 123456     |
+#      | displayName | Nguyen Teo |
+#      | gender      | 1          |
+#      | language    | 0          |
+#    And The request should be succeed
+#    Given I open chrome
+#    When On Web, I open login page
+
+  @signup_01
+  Scenario: Signup
+    Given On SqlServer, I delete user by username "0988886661" and country "US"
     Given I open chrome
-    When On Web, I open login page
+    And On Web, I open login page
+    When On Web, I open signup account with username is "0988886664", password is "123456", full name "Ngân Hà" and country "US"
+    And I enter verification code with code "1234"
+    Then I check on dashboad page have name "Ngân Hà"
+
+
 
   @smoke @login-1
   Scenario: login 2.

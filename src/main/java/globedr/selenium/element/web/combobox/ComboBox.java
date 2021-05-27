@@ -14,10 +14,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Function;
 
-public class ComboBox extends WebElement {
+public class  ComboBox extends WebElement {
 
 
-    public ComboBox(By by) {
+    public ComboBox(By by)   {
         super(by);
     }
 
@@ -48,6 +48,7 @@ public class ComboBox extends WebElement {
         }
         return rads;
     }
+
 
     public void selectValue(String value) {
         EventListener.getEvent().beforeSelectValue(this, value);

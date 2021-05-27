@@ -1,11 +1,13 @@
 package pages;
 
+import globedr.selenium.driver.DriverUtils;
 import globedr.selenium.element.By;
 import globedr.selenium.element.web.button.Button;
 import globedr.selenium.element.web.combobox.ComboBox;
 import globedr.selenium.element.web.label.Label;
 import globedr.selenium.element.web.radioButton.RadioButton;
 import globedr.selenium.element.web.textbox.TextBox;
+import org.openqa.selenium.JavascriptExecutor;
 
 public class LoginPage {
     public final HeaderGuest headerGuest = new HeaderGuest();
@@ -16,13 +18,19 @@ public class LoginPage {
     private final RadioButton radLikeSite = new RadioButton(By.xpath("//input[@name='like']/following-sibling::label"));
     private final By iframe = By.xpath("//iframe[@name='oddcouple']");
     private final Label lblTitlePage = new Label(By.xpath("//h2[@translate='signIn']"));
+    private final Button  btnSelectSignUp = new Button(By.xpath("//button[contains(@class,'btn-sign-up')]"));
 
     public String getTitlePage(){
         lblTitlePage.waitTextIsDisplayed();
         return lblTitlePage.getText();
     }
 
-
+    public void openSignupPage(){
+        btnSelectSignUp.waitElementToBeClickable();
+        JavascriptExecutor js = (JavascriptExecutor) DriverUtils.getDriver();
+        js.executeScript("arguments[0].scrollIntoView();", btnSelectSignUp.getWebElement());
+        btnSelectSignUp.click();
+    }
     public void login(String user, String pass, String country){
         enterUser(user);
         enterPass(pass);
