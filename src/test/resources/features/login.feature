@@ -16,14 +16,12 @@ Feature: User Profile
 
   @signup_01
   Scenario: Signup
-    Given On SqlServer, I delete user by username "0988886661" and country "US"
+    Given On SqlServer, I delete user by username "0347249676" and country "VN"
     Given I open chrome
     And On Web, I open login page
-    When On Web, I open signup account with username is "0988886664", password is "123456", full name "Ngân Hà" and country "US"
+    When On Web, I open signup account with username is "0347249676", password is "123456", full name "Ngân Hà" and country "VN"
     And I enter verification code with code "1234"
     Then I check on dashboad page have name "Ngân Hà"
-
-
 
   @smoke @login-1
   Scenario: login 2.
@@ -33,7 +31,6 @@ Feature: User Profile
   @smoke @test-login-popup
   Scenario: login 2.
     Given open url "https://kb1.globedr.com", user "globedr", pass "Globedr@54321"
-
 
   @smoke @test
   Scenario Outline: Correct non-zero number of books found by author by list

@@ -14,7 +14,6 @@ import java.util.List;
 
 public class SignupPage {
     Country country = new Country();
-    private final Button  btnSelectSignUp = new Button(By.xpath("//button[contains(@class,'btn-sign-up')]"));
     private final ComboBox cbCountry = new ComboBox(By.xpath("//div[@id='SignIn']//select"));
     private final TextBox txtUserName = new TextBox(By.id("UserName"));
     private final TextBox txtPassword = new TextBox(By.id("Password"));
@@ -29,8 +28,6 @@ public class SignupPage {
         clickButtonSignUp();
 
     }
-
-
 
     public void enterUserName (String userName){
         txtUserName.waitElementToBeClickable();

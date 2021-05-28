@@ -21,9 +21,11 @@ public class DashboardPersonalPage {
         lblDisplayName.waitVisibilityOfElementLocated();
        return lblDisplayName.getText();
     }
-    public void openMenuAskDoctor(MenuDBPersonal menu){
+    public void openMenuAskDoctor(){
 
         Button btnAskDoctor = new Button(By.xpath(String.format(xMenuDashboard,MenuDBPersonal.ASK_DOCTOR)));
+        btnAskDoctor.waitElementToBeClickable();
+        btnAskDoctor.click();
     }
 
 }
